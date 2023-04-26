@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   push:
+    #Only run the workflow when there are changes to Python source code or the DockerFile
     paths:
       - python-app-src/**
       - Dockerfile

@@ -46,7 +46,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:${{ steps.git_hash_calc_step.outputs.git_hash_short }}, latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:${{ steps.git_hash_calc_step.outputs.git_hash_short }}, ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:latest
 
       - name: Scan for vulnerabilities
         uses: crazy-max/ghaction-container-scan@v2

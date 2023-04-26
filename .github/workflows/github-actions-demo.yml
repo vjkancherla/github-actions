@@ -48,5 +48,10 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:${{ steps.git_hash_calc_step.outputs.git_hash_short }}
 
+      - name: Scan for vulnerabilities
+        uses: crazy-max/ghaction-container-scan@v2
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:${{ steps.git_hash_calc_step.outputs.git_hash_short }}
+          dockerfile: ./Dockerfile
 
       - run: echo "🍏 This job's status is ${{ job.status }}."

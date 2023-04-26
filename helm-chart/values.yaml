@@ -9,10 +9,10 @@ custom_message: default
 replicaCount: 1
 
 image:
-  repository: vkancherla/my-python-app:latest
+  repository: vkancherla/my-python-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""

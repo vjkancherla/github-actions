@@ -48,5 +48,4 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:${{ steps.git_hash_calc_step.outputs.git_hash_short }}
 
-
       - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -1,6 +1,6 @@
 # github-actions
 
-This is project where I test GitHub Actions.
+This is a project where I test GitHub Actions.
 
 A high level overview what I am setting up here:
 
@@ -41,15 +41,15 @@ A high level overview what I am setting up here:
 2. I have ArgoCD Application Manifests defined for deploying the 3 environments. The "argo-cd" directory contains the manifests
 
 
-#ArgoCD App-of-Apps
+# ArgoCD App-of-Apps
 1. I also have a ArgoCD App-of-Apps Application manifest file (argocd-app-of-apps.yaml) which is used to deploy the Application Manifests in "argo-cd" directory.
 2. With this setup, any changes made to the contents with in the helm-chart or argo-cd directory are automatically deleted and reconciled by ArgoCD.
 
 
-#Deployment
-1. Deploy ArgoCD Helm chat from ArtifactHub, into argo namespace
+# Deployment
+1. Deploy ArgoCD Helm chart from ArtifactHub, into argo namespace
 2. From the root of the repo, run - kubectl create -f argocd-app-of-apps.yaml -n argo
 3. Create port forwarding to access the App in different environments:
-> k port-forward service/python-app-prod  8083:80 -n prod
-> k port-forward service/python-app-uat  8082:80 -n uat
-> k port-forward service/python-app-dev  8081:80 -n dev
+  - k port-forward service/python-app-prod  8083:80 -n prod
+  - k port-forward service/python-app-uat  8082:80 -n uat
+  - k port-forward service/python-app-dev  8081:80 -n dev

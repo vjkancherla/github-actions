@@ -48,7 +48,7 @@ spec:
               port: http
           envFrom:
             - configMapRef:
-                name: environment-vars
+                name: {{ .Release.Name }}-environment-vars
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "python-app-chart.fullname" . }}
+  name: {{ .Release.Name }}
   labels:
     {{- include "python-app-chart.labels" . | nindent 4 }}
   namespace: {{.Values.environment}}
